@@ -6,13 +6,11 @@
  *          with varying velocity.
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <GLUT/glut.h>
 #include <time.h>
-
 
 
 int   cube_exploded = 0;
@@ -47,10 +45,8 @@ typedef struct Particle{
 } Particle;
 
 const int NumParticles = 10000;
-
 Particle p[NumParticles];
 Particle p2[NumParticles];
-
 
 // Light sources
 GLfloat  light0Amb[4] =  { 1.0, 0.6, 0.2, 1.0 };
@@ -62,15 +58,11 @@ GLfloat  light1Dif[4] =  { 1.0, 1.0, 1.0, 1.0 };
 GLfloat  light1Spec[4] = { 1.0, 1.0, 1.0, 1.0 };
 GLfloat  light1Pos[4] =  { 0.0, 5.0, 5.0, 0.0 };
 
-
-
 void display (void);
 void keyboard (unsigned char, int, int);
 void reshape (int, int);
 void idle (void);
 void explode_cube (void);
-
-
 
 void display (void)
 {
@@ -175,10 +167,6 @@ void idle (void)
     glutPostRedisplay ();
 }
 
-
-
-
-
 void keyboard (unsigned char key, int x, int y)
 {
     switch (key)
@@ -193,8 +181,6 @@ void keyboard (unsigned char key, int x, int y)
     }
 }
 
-
-
 void reshape (int w, int h)
 {
 
@@ -205,20 +191,13 @@ void reshape (int w, int h)
     glMatrixMode (GL_MODELVIEW);
 }
 
-
-
 void explode_cube(void)
 {
     cube_exploded = 1;
 }
 
-
-
-
 int main (int argc, char *argv[])
 {
-    
-    
     glutInit (&argc, argv);
     glutInitWindowPosition (0, 0);
     glutInitWindowSize (1280, 1024);
